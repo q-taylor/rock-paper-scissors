@@ -1,0 +1,43 @@
+#main-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#btn-container {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    margin: 50px;
+}
+.btn {
+    padding: 0;
+    margin: 2em;
+    border: none;
+    background-color: white;
+    transition-duration: 0.8s;
+    
+}
+.btn:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+img {
+    width: 150px;
+    height: auto;
+
+}
+#results-container {
+    display:flex;
+    justify-content: center;
+}
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

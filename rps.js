@@ -49,10 +49,8 @@ function getComputerChoice () {
 /* plays a round of Rock Paper Scissors and returns a string declaring the winner */
 function playRound (playerSelection) {
     let winner = '';
-    
     const computerChoice = getComputerChoice ();
-    console.log(`Player = ${playerSelection}`);
-    console.log(`Computer = ${computerChoice}`);
+    
     if (playerSelection === computerChoice) {
         winner = 'It\'s a tie!';
     } else if (playerSelection == 'rock' && computerChoice == 'paper') {
@@ -76,6 +74,14 @@ function playRound (playerSelection) {
     } else {
         winner = 'You didn\'t enter a valid choice, try again!';
     }
+    if (player_Count === 5) {
+        endGame();
+        return;
+    } else if (comp_Count === 5) {
+        endGame();
+        return;
+
+    }
     round_Winner.textContent = winner;
     round_Count++;
     roundNum.textContent = `Round ${round_Count}`;
@@ -85,6 +91,10 @@ function playRound (playerSelection) {
     
 }
 
+function endGame () {
+    const mainPage = document.getElementById('main-page');
+    mainPage.textContent = 'GAME OVER';
+}
 /* listen for buttons to be clicked and assigns proper player selection */
 document.getElementById('rock').addEventListener('click', () => playRound('rock'));
 document.getElementById('paper').addEventListener('click', () => playRound('paper'));
